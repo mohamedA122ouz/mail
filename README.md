@@ -3,10 +3,15 @@
 
 This API enables customers to send messages via email directly from the website they are using, without having to switch to the email application. This streamlines the communication process and enhances the user experience.
 
+> Project server [https://mail-fjc1.onrender.com](https://mail-fjc1.onrender.com)
+
+> The proper link for _POST_ request is [https://mail-fjc1.onrender.com/mail](https://mail-fjc1.onrender.com/mail)
+ 
 # How to use it
 
 using it is very simple actully but you should do some important things in you websit to make sure that the user enter the rigth data
 
+**_Make sure you send requist at the end point /mail_**
 
 - First: What should user enter?<span id="user"></span>
     1. the application must contain an text filed to enter username (<span style = "color:red;">*</span>required)
