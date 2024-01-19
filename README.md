@@ -53,8 +53,22 @@ if the server sent the message successfully it will response with a json like th
 { "msg": "mail sent" }
 ```
 with status **200** _OK_
+
+the sent mail would be like the following
+
+
+|KEY|Detail|
+|---|---|
+Username|Service requester Name|
+Email|<a href="mailto:ServiceRequesterMail@example.com">ServiceRequesterMail@example.com</a>|
+Phone|<a href="tel:01659678687">01659678687</a>|
+<div>HTML MESSAGE</div>
+
+___
+
+
 if the server didn't send the message it will response with a json like the following 
 ```json
 { "msg": "mail not sent"}
 ```
-with status **200** _OK_
+with status **500** _Internal Server Error_

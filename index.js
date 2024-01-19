@@ -28,17 +28,15 @@ async function main(to, subject, body) {
             port: 465,
             secure: true,
             auth: {
-                // TODO: replace `user` and `pass` values from <https://forwardemail.net>
                 user: "azouznodemailer@gmail.com",
                 pass: changing("7b0a20202020226976223a20226632663539386636303538393439363333643064313630383039313734306538222c0a2020202022656e6372797074656444617461223a202230306631393966643736323263613263343730646162333436303135356431666431356136306338386565636634373336626562313231326436313266666231220a7d"),
             },
         });
-        // send mail with defined transport object
         const info = await transporter.sendMail({
-            from: `${body.username}<azouznodemailer@gmail.com>`, // sender address
-            to: `${to}`, // list of receivers
-            subject: subject, // Subject line
-            html: html, // html body
+            from: `${body.username}<azouznodemailer@gmail.com>`,
+            to: `${to}`,
+            subject: subject,
+            html: html,
         });
         console.log("Message sent: %s", info.messageId);
         if(info.accepted){
