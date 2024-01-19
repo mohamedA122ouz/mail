@@ -46,6 +46,30 @@ using it is very simple actully but you should do some important things in you w
         * Notice in gmail if the subject doesn't change it combine them to gether 
     * body contains what user fell previously <a href = "#user">click to show</a>
 
+## Vanilla js example
+
+```js
+async function setMessage()() {
+let data = await fetch("https://mail-fjc1.onrender.com/mail", {
+                method: "POST",
+                headers: { "content-type": "application/json" },//this must be add
+                body: JSON.stringify({
+                    "to": "reseiverAddress@example.com",
+                    "subject": "Hello World!",
+                    "body":
+                    {
+                        "username": "Service requester Name",
+                        "email": "ServiceRequesterMail@example.com",
+                        "phone": "01659678687",
+                        "message": "<h1>this is a test</h1>"
+                    }
+                })
+            });
+            console.log(await data.json());
+    },
+```
+- notice you must add headers like shown above and also remove `mode:"no-cors"`
+
 - Fourth: What the server will response with?
 
 if the server sent the message successfully it will response with a json like the following 
