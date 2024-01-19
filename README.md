@@ -62,7 +62,7 @@ the sent mail would be like the following
 Username|Service requester Name|
 Email|<a href="mailto:ServiceRequesterMail@example.com">ServiceRequesterMail@example.com</a>|
 Phone|<a href="tel:01659678687">01659678687</a>|
-<div>HTML MESSAGE</div>
+<div><h1>this is a test</h1></div>
 
 ___
 
