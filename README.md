@@ -6,7 +6,7 @@ This API enables customers to send messages via email directly from the website 
 > Project server [https://mail-fjc1.onrender.com](https://mail-fjc1.onrender.com)
 
 > The proper link for _POST_ request is [https://mail-fjc1.onrender.com/mail](https://mail-fjc1.onrender.com/mail)
- 
+
 # How to use it
 
 using it is very simple actully but you should do some important things in you websit to make sure that the user enter the rigth data
@@ -58,5 +58,3 @@ if the server didn't send the message it will response with a json like the foll
 { "msg": "mail not sent"}
 ```
 with status **200** _OK_
-
-if some thing not expectly happend it will send `msg` with the error happend
