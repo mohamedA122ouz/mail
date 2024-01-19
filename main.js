@@ -6,28 +6,28 @@ const port = process.env.PORT || 4000;
 app.listen((port || 4242), "0.0.0.0");
 console.log(port);
 import mail from "./index.js";
-let count = {};
-try {
-    count = fs.readFileSync("./counter.json");
-    count = JSON.parse(count);
-}
-catch {
-    fs.writeFileSync("./counter.json", "{}");
-    count = fs.readFileSync("./counter.json");
-    count = JSON.parse(count);
-}
-function setCount(user) {
-    if (user) {
-        if (count[user] === undefined) {
-            count[user] = 0;
-        }
-        count[user]++;
-        fs.writeFileSync("./counter.json", JSON.stringify(count));
-    }
-    else {
-        throw "undefined username";
-    }
-}
+// let count = {};
+// try {
+//     count = fs.readFileSync("./counter.json");
+//     count = JSON.parse(count);
+// }
+// catch {
+//     fs.writeFileSync("./counter.json", "{}");
+//     count = fs.readFileSync("./counter.json");
+//     count = JSON.parse(count);
+// }
+// function setCount(user) {
+//     if (user) {
+//         if (count[user] === undefined) {
+//             count[user] = 0;
+//         }
+//         count[user]++;
+//         fs.writeFileSync("./counter.json", JSON.stringify(count));
+//     }
+//     else {
+//         throw "undefined username";
+//     }
+// }
 
 
 app.post("/mail", async (req, res) => {
