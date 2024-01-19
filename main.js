@@ -33,6 +33,7 @@ import mail from "./index.js";
 app.post("/mail", async (req, res) => {
     try {
         let data = req.body;
+        console.log(data)
         // setCount(data.to);
         let i = await mail(data.to, data.subject, data.body);
         if (i) {
