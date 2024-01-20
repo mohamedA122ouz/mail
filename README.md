@@ -93,6 +93,16 @@ ___
 
 if the server didn't send the message it will response with a json like the following 
 ```json
-{ "msg": "mail not sent"}
+{ "msg": "mail not sent","receivedBody":{
+    "to":"reseiverAddress@example.com",
+    "subject":"Hello World!",
+    "body":
+        {   
+            "username":"Service requester Name",
+            "email":"ServiceRequesterMail@example.com",
+            "phone":"01659678687",
+            "message":"<h1>this is a test</h1>"
+        }
+    }}
 ```
 with status **500** _Internal Server Error_
