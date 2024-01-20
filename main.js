@@ -9,35 +9,11 @@ const port = process.env.PORT || 4000;
 app.listen((port || 4242), "0.0.0.0");
 console.log(port);
 import mail from "./index.js";
-// let count = {};
-// try {
-//     count = fs.readFileSync("./counter.json");
-//     count = JSON.parse(count);
-// }
-// catch {
-//     fs.writeFileSync("./counter.json", "{}");
-//     count = fs.readFileSync("./counter.json");
-//     count = JSON.parse(count);
-// }
-// function setCount(user) {
-//     if (user) {
-//         if (count[user] === undefined) {
-//             count[user] = 0;
-//         }
-//         count[user]++;
-//         fs.writeFileSync("./counter.json", JSON.stringify(count));
-//     }
-//     else {
-//         throw "undefined username";
-//     }
-// }
 
 
 app.post("/mail", async (req, res) => {
     try {
         let data = req.body;
-        console.log(data)
-        // setCount(data.to);
         let i = await mail(data.to, data.subject, data.body);
         if (i) {
             res.status(200);
@@ -45,13 +21,13 @@ app.post("/mail", async (req, res) => {
         }
         else if (!i) {
             res.status(500);
-            res.json({ msg: "mail not sent" });
+            res.json({ msg: "mail not sent",receivedBody:data});
         }
     }
     catch (e) {
         console.log(e);
         res.status(500);
-        res.json({ msg: "mail not sent" });
+        res.json({ msg: "mail not sent",moreInfo:e,receivedBody:data});
     }
 });
 app.get("/counter", (req, res) => {

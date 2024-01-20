@@ -43,7 +43,7 @@ async function main(to, subject, body) {
             return true;
         }
         else{
-            throw "mail Not sent";
+            throw {msg:"mail Not sent",receivedBody:body};
         }
     }catch(e){
         console.log(e)
