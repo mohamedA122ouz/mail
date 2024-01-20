@@ -97,8 +97,7 @@ if the server didn't send the message it will response with a json like the foll
     "to":"reseiverAddress@example.com",
     "subject":"Hello World!",
     "body":
-        {   
-            "username":"Service requester Name",
+        {   //username not exist and this cause the error (this an example)
             "email":"ServiceRequesterMail@example.com",
             "phone":"01659678687",
             "message":"<h1>this is a test</h1>"
